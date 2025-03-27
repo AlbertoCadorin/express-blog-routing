@@ -7,27 +7,31 @@ router.get('/', (req, res) => {
 })
 // show
 router.get('/:id', (req,res)=>{
-  res.send(`detagli post`);
+  const idPost = req.params.id
+  res.send(`detagli post ${idPost}`);
 });
 
 //store
 router.post('/', (req,res)=>{
-  res.send('Creazione nuovo post');
+  res.send(`Creazione nuovo post`);
 });
 
 //update 
 router.put('/:id', (req,res)=>{
-  res.send('Modifica integrale');
+  const idPost = req.params.id
+  res.send(`Modifica integrale ${idPost}`);
 });
 
 //modify
 router.patch('/:id', (req,res)=>{
-  res.send('Modifica parziale');
+  const idPost = req.params.id
+  res.send(`Modifica parziale ${idPost}`);
 });
 
 //delete
 router.delete('/:id', (req,res)=>{
-  res.send('Eliminazione post');
+  const idPost = req.params.id
+  res.send(`Eliminazione post ${idPost}`);
 });
 
 module.exports = router;
