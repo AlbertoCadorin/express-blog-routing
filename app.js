@@ -1,16 +1,18 @@
 const express = require('express')
 const app = express()
-const port = 4000
-const postsList = require('./data/posts.js')
+const port = 3000
+const router = require('./router/posts.js')
+
+
 // public asset
 app.use(express.static('public/imgs/posts'))
 
-app.get('/', (req, res) => {
-    res.send('Server del mio blog')
+app.get('/', (req,res)=>{
+    res.send('Ciao')
 })
-app.get('/bacheca', (req, res) => {
-    res.json(postsList)
-})
+
+app.use('/posts', router)
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
