@@ -7,8 +7,9 @@ router.get('/', (req, res) => {
 })
 // show
 router.get('/:id', (req,res)=>{
-  const idPost = req.params.id
-  res.send(`detagli post ${idPost}`);
+  const param = req.params.id
+  const postSlug = post.find(({ slug }) => slug === param);
+  res.json(postSlug)
 });
 
 //store
